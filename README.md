@@ -1,6 +1,6 @@
 # SkillsMeterified ~ Test Your Skills In RealTime
 
-  Live at  http://skillsmeterified.tk
+  Live at  http://ec2-13-126-176-164.ap-south-1.compute.amazonaws.com
 
 ## Description
 A Multiple choice test taking system in which tests are tracked live and analytics are generated based on That.
