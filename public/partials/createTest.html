@@ -1,0 +1,42 @@
+<div class="container">
+<h1 class="text-center red" >Create An Test</h1><br>
+  <div class="hr-title"><span>************</span></div>
+  <div class="panel">
+    <div class="panel-body">
+      <div ng-if="messages.error" role="alert" class="alert alert-danger">
+        <div ng-repeat="error in messages.error">{{ error.msg}}</div>
+      </div>
+      <div ng-if="messages.success" role="alert" class="alert alert-success">
+        <div ng-repeat="success in messages.success">{{success.message}}</div>
+      </div>
+      <form ng-submit="createTest()">
+        <legend class="h2">Test Details</legend>
+        <div class="form-group">
+          <label for="name">Test Name:</label>
+          <input type="text" name="testName" id="testName" placeholder="Test Name" class="form-control" ng-model="test.testName" autofocus required>
+        </div>
+        <div class="form-group">
+          <label for="email">Test Category:</label>
+          <input type="text" name="testCategory" id="testCategory" placeholder="Test Category" required class="form-control" ng-model="test.testCategory">
+        </div>
+        <div class="form-group">
+          <label for="email">Test Description:</label>
+          <input type="text" name="testDetails" id="testDetails" placeholder="Test Description" required class="form-control" ng-model="test.testDetails">
+        </div>
+        <div class="form-group">
+          <label for="password">Test Total Questions:</label>
+          <input type="number" name="totalQuestions" id="totalQuestions" placeholder="5" value=5 required readonly class="form-control" ng-model="test.totalQuestions">
+        </div>
+        <div class="form-group">
+          <label for="password">Test Total Score:</label>
+          <input type="number" name="totalScore" id="totalScore"  required placeholder="50" value=50 readonly class="form-control" ng-model="test.totalScore">
+        </div>
+        <div class="form-group">
+          <label for="password">Test Total Duration (In Seconds) :</label>
+          <input type="number" name="testDuration" id="testDuration"  required placeholder="50" value=50 readonly class="form-control" ng-model="test.testDuration">
+        </div>
+        <button type="submit" class="btn btn-success btn-block btn-large">Create an Test</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="panel">
+        <div class="panel-body">
+          <h4 class="alert alert-success">Hello! {{profile.name}},
+             How are you doing today?,  Let's assume you're doing great :)</h4>
+          <hr>
+          <h1 class="text-center h1">Let's See Your Performance in Test, {{test.testName}}</h1>
+          <hr>
+          <div class="hr-title"><span>************</span></div>
+          <p>
+    <div class="testDetails table-responsive">
+  <table class="table table-bordered table-striped table-hover table-condensed ">
+  	<thead>
+  		<tr>
+  			<th class="text-center">
+  				Test Name
+  			</th>
+  			<th class="text-center">
+  				{{test.testName}}
+  			</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr class="text-center">
+  			<td >
+  				Test Category
+  			</td>
+  			<td>
+  				{{test.testCategory}}
+  			</td>
+  		</tr>
+  		<tr class="text-center">
+  			<td>
+  				Test Details
+  			</td>
+  			<td>
+  				{{test.testDetails}}
+  			</td>
+  		</tr >
+  		<tr class="text-center">
+  			<td>
+  				Total Number of Questions
+  			</td>
+  			<td>
+  				{{test.totalQuestions}}
+  			</td>
+  		</tr>
+  		<tr class="text-center">
+  			<td>
+  				Test Duration
+  			</td>
+  			<td>
+          {{test.testDuration}}
+  			</td>
+  		</tr>
+  		<tr class="text-center">
+  			<td>
+  				Test Total Score
+  			</td>
+  			<td>
+  				{{test.totalScore}}
+  			</td>
+  		</tr>
+      <tr class="text-center">
+  			<td>
+  				No. Of Correct Answer(s):
+  			</td>
+  			<td>
+  				{{totalCorrect}}
+  			</td>
+  		</tr>
+      <tr class="text-center">
+  			<td>
+  				No. Of Wrong Answer(s):
+  			</td>
+  			<td>
+  				{{totalWrong}}
+  			</td>
+  		</tr>
+      <tr class="text-center">
+  			<td>
+  				Time taken:
+  			</td>
+  			<td>
+  				{{timeTakenTotal}} Minutes
+  			</td>
+  		</tr>
+  	</tbody>
+  </table>
+</div>
+<div class="hr-title"><span>************</span></div>
+          </p>
+          <div class="text-center">
+            <a href="/dashboard"  class="btn btn-primary btn-large text-center">Go To DashBoard</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="panel">
+        <div class="panel-body">
+          <div class="hr-title"><span>************</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

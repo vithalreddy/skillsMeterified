@@ -1,0 +1,177 @@
+<div class="container">
+<h1 class="text-center red" >You're Viewing "{{test.testName}}" Test</h1><br>
+  <div class="hr-title"><span>************</span></div>
+  <div class="panel">
+    <div class="panel-body">
+      <div ng-if="messages.error" role="alert" class="alert alert-danger">
+        <div ng-repeat="error in messages.error">{{ error.msg}}</div>
+      </div>
+      <div ng-if="messages.success" role="alert" class="alert alert-success">
+        <div ng-repeat="success in messages.success">{{success.message}}</div>
+      </div>
+      <div class="text-center">
+      <a  ng-click="showmeEditTest=true" ng-hide="showmeEditTest"  class="btn btn-primary btn-large text-center h5">Edit Test</a>
+      <a  ng-click="showmeEditTest=false" ng-show="showmeEditTest"  class="btn btn-danger btn-large text-center h5">Go Back</a>
+      <a  ng-click="deleteSingleTest()"   class="btn btn-danger btn-large text-center h5">Delete Test</a>
+      </div><hr>
+      <div class="editSingleTest text-center" ng-show="showmeEditTest">
+  <form ng-submit="updateTest()">
+<legend class="h2">Test Details</legend>
+<div class="form-group">
+  <label for="testName">Test Name:</label>
+  <input type="text" name="testName" id="testName"  class="form-control" ng-model="test.testName" autofocus required>
+</div>
+<div class="form-group">
+  <label for="email">Test Category:</label>
+  <input type="text" name="testCategory" id="testCategory"  required class="form-control" ng-model="test.testCategory">
+</div>
+<div class="form-group">
+  <label for="email">Test Description:</label>
+  <input type="text" name="testDetails" id="testDetails"  required class="form-control" ng-model="test.testDetails">
+</div>
+<div class="form-group">
+  <label for="password">Test Total Questions:</label>
+  <input type="number" name="totalQuestions" id="totalQuestions"  required readonly class="form-control" ng-model="test.totalQuestions">
+</div>
+<div class="form-group">
+  <label for="password">Test Total Score:</label>
+  <input type="number" name="totalScore" id="totalScore"  required  readonly class="form-control" ng-model="test.totalScore">
+</div>
+<div class="form-group">
+  <label for="password">Test Total Duration (In Minutes) :</label>
+  <input type="number" name="testDuration" id="testDuration"  required  readonly class="form-control" ng-model="test.testDuration">
+</div>
+<button type="submit" class="btn btn-success btn-block btn-large">Update Test</button>
+</form>
+      </div>
+<div class="testDetails table-responsive" ng-hide="showmeEditTest">
+  <table class="table table-bordered table-striped table-hover table-condensed ">
+  	<thead>
+  		<tr>
+  			<th class="text-center">
+  				Test Name
+  			</th>
+  			<th class="text-center">
+  				{{test.testName}}
+  			</th>
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<tr class="text-center">
+  			<td >
+  				Test Category
+  			</td>
+  			<td>
+  				{{test.testCategory}}
+  			</td>
+  		</tr>
+  		<tr class="text-center">
+  			<td>
+  				Test Details
+  			</td>
+  			<td>
+  				{{test.testDetails}}
+  			</td>
+  		</tr >
+  		<tr class="text-center">
+  			<td>
+  				Total Number of Questions
+  			</td>
+  			<td>
+  				{{test.totalQuestions}}
+  			</td>
+  		</tr>
+  		<tr class="text-center">
+  			<td>
+  				Test Duration
+  			</td>
+  			<td>
+          {{test.testDuration}}
+  			</td>
+  		</tr>
+  		<tr class="text-center">
+  			<td>
+  				Test Total Score
+  			</td>
+  			<td>
+  				{{test.totalScore}}
+  			</td>
+  		</tr>
+  	</tbody>
+  </table>
+</div>
+<div class="hr-title"><span>************</span></div>
+<!--  test details end-->
+<div class="addQuestion text-center" ng-hide="showmeEditTest">
+  <a  ng-click="showme=true" ng-hide="showme"  class="btn btn-primary btn-large text-center h5">Add An Question</a>
+  <a  ng-click="showme=false" ng-show="showme"  class="btn btn-danger btn-large text-center h5">Hide Question Add Form</a>
+  <hr>
+  <!-- question add form -->
+  <div ng-show="showme">
+    <div class="col-md-3">  </div>
+    <form ng-submit="addAnQuestion()" class="col-md-6">
+        <legend class="h2">Question Details</legend>
+        <div class="form-group">
+          <label for="question"> Question</label>
+          <input type="text" name="question" id="question" placeholder="Question " class="form-control" ng-model="question.question" autofocus required>
+        </div>
+        <div class="form-group">
+          <label for="optionA">Option A:</label>
+          <input type="text" name="optionA" id="optionA" placeholder="option A " required class="form-control" ng-model="question.optionA">
+        </div>
+        <div class="form-group">
+          <label for="optionC">Option B:</label>
+          <input type="text" name="optionB" id="optionC" placeholder=" option B " required class="form-control" ng-model="question.optionB">
+        </div>
+        <div class="form-group">
+          <label for="optionC">Option C:</label>
+          <input type="text" name="optionC" id="optionC" placeholder="option C"  required class="form-control" ng-model="question.optionC">
+        </div>
+        <div class="form-group">
+          <label for="optionD">Option D:</label>
+          <input type="text" name="optionD" id="optionD"  required placeholder="option D"  class="form-control" ng-model="question.optionD">
+        </div>
+        <div class="form-group">
+          <!-- <label for="text">Answer :</label> -->
+          <!-- <input type="text" name="answer" id="answer"  required placeholder="Answer"   class="form-control" ng-model="question.answer"> -->
+           <label for="answer"> Answer : (select correct one):</label>
+          <select id="answer" name="answer"  required   class="form-control" ng-model="question.answer">
+            <option>optionA</option>
+            <option>optionB</option>
+            <option>optionC</option>
+            <option>optionD</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success btn-block btn-large">Create an Question</button>
+      </form>
+  </div>
+  <div class="col-md-3">  </div>
+  <!-- question add form end -->
+</div>
+</div>
+<hr>
+
+<div class="questions" ng-repeat="question in questions" ng-hide="showmeEditTest" >
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h6 class="panel-title pull-left">{{$index+1}}.	{{question.question}}</h6>
+    <div class="clearfix"></div>
+  </div>
+  <div class="panel-body"><ul class="col-md-6">
+    <br>
+    <li class="list-btm-b">Option A :<span class="qnaRed">{{question.optionA}}</span></li>
+    <li class="list-btm-b">Option B: <span class="qnaRed">{{question.optionB}}</span></li>
+    <li class="list-btm-b">Option C: <span class="qnaRed">{{question.optionC}}</span></li>
+    <li class="list-btm-b">Option D: <span class="qnaRed">{{question.optionD}}</span></li>
+    <li class="list-btm-b">Answer: <span  style="color: Blue; font-weight: bold;">{{question.answer}}</span></li>
+  </ul></div>
+  <div class="col-md-6">  </div>
+  <div class="panel-footer text-center">
+        <a href="/editquestion/{{question._id}}" class="btn btn-primary btn-large text-center h5">Edit</a>
+        <a  href="/editquestion/{{question._id}}" class="btn btn-danger btn-large text-center h5">Delete</a>
+  </div>
+</div>
+</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="container-fluid">
+  <h4 class="alert alert-success">Hello! {{profile.name}},
+             How are you doing today?,  Let's assume you're doing great :)</h4>
+             <!--  -->
+             <div class="col-sm-12">
+               <div class="panel">
+                 <div class="panel-body">
+                   <h2 class="text-center h1">All Tests Available</h2>
+                   <div class="hr-title"><span>************</span></div>
+                 </div>
+               </div>
+             </div>
+             <!--  -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6" ng-repeat="test in tests">
+            <h2 class="text-center h1" ng-if="!test">No Tests Listed By Admin</h2>
+            <div class="panel testsGrid" >
+              <div class="panel-body">
+                <b>Test Name: {{test.testName}}</b>
+                <hr>
+                <p class="h5">
+                  <ul>
+                    <li> Test Category: {{test.testCategory}}</li>
+                    <li>  Test Details: {{test.testDetails}}	</li>
+                    <li>  No. Of Questions: {{test.questions.length}}</li>
+                      </ul>
+                        <hr>
+                </p>
+                <div class="text-center" >
+                <a href="" class="btn btn-primary btn-large h5"  ng-click = "checkUser(test._id)"
+                data-toggle="modal" data-target="#myModal{{$index+1}}">Let's Start / View Results</a>
+                <!-- Modal -->
+<div id="myModal{{$index+1}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Before You Attempt {{test.testName}}, Test, Please Read The Following Instructions</h4>
+        <button type="button" ng-click="checkUserReset()" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+
+          	<ul class="text-left text-capitalize" style="color: black">
+            <li>Once You click Lets Start The Test! Button, There's no turning back you have to attempt test, Otherwise You will be awarded zero Marks</li>
+            <li>If  You Cancel Without Finishing The Test, Refresh The Page, Try to Forcefully Cancel, You will Be awarded Zero marks</li>
+            <li>As Soon As Test Start's A Timer will Start, and You will Have to Answer Each Question In 10 Sconds, Otherwise System Will Automatically Show Next Question and Award Zero Marks for That Unanswred Question,</li>
+            <li>You can't Reattempt an already answred question, So Be Careful.</li>
+            <li>If you wish to continue, Please Press Let's Start The Test Button!!</li>
+         </ul>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <!-- Trigger the modal with a button -->
+        <a href="/live-test/{{test._id}}" target="_blank" class="btn btn-success  btn-large h5" ng-disabled="ifAttempted">Lets Start The Test!</a>
+        <a href="/live-test/scorecard/{{test._id}}" target="_blank" class="btn btn-success btn-large  h5" ng-disabled="notAttempted">View Results</a>
+        <button type="button" id="userReload" class="btn btn-danger btn-large h5" data-dismiss="modal" ng-click="checkUserReset()">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- model content end -->
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="col-sm-12">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="hr-title"><span>************</span></div>
+      </div>
+    </div>
+  </div>
+</div>

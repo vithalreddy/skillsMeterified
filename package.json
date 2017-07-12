@@ -1,0 +1,33 @@
+{
+  "name": "skillsmeterified",
+  "version": "1.0.0",
+  "description": "Test Your Skills",
+  "scripts": {
+    "deploy": "npm test && git push heroku master",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "bcrypt-nodejs": "^0.0.3",
+    "body-parser": "^1.15.1",
+    "compression": "^1.6.2",
+    "cookie-parser": "^1.4.1",
+    "dotenv": "^4.0.0",
+    "errorhandler": "^1.5.0",
+    "express": "^4.13.4",
+    "express-error-handler": "^1.1.0",
+    "express-validator": "^3.2.0",
+    "jsonwebtoken": "^7.4.1",
+    "method-override": "^2.3.9",
+    "moment": "^2.12.0",
+    "mongoose": "^4.4.8",
+    "morgan": "^1.7.0",
+    "nodemailer": "^4.0.1",
+    "request": "^2.69.0",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "6.1.0"
+  }
+}

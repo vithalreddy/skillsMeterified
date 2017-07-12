@@ -1,0 +1,127 @@
+<div class="container-fluid">
+  <h4 class="alert alert-success">Hello! {{profile.name}},
+             How are you doing today?,  Let's assume you're doing great :)</h4>
+             <!--  -->
+             <div class="col-sm-12">
+               <div class="panel">
+                 <div class="panel-body">
+             <!--all users section start  -->
+                  <h2 class="text-center h1">All Users</h2>
+                   <div class="hr-title"><span>************</span></div>
+                   <p class="alert alert-info text-center">To view all tests, scroll down</p>
+
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6" ng-repeat="user in users track by $index">
+            <h2 class="text-center h1" ng-if="!user">No Users registred Yet</h2>
+            <div class="panel " >
+              <div class="panel-body">
+                <b>User: {{user.name}}</b>
+                <hr>
+                <p class="h5">
+                  <ul>
+                  <li>User Image: <img style="width:25px; height: 25px" ng-src="{{user.picture || user.gravatar}}"></li>
+                    <li> User Email: {{user.email}}</li>
+                      </ul>
+                        <hr>
+                </p>
+                <div class="text-center" >
+                <a href="" ng-click="checkUser(user._id);"
+                data-toggle="modal" data-target="#myModal{{$index+1}}"
+                 class="btn btn-info btn-large h5" >View User  Test Analytics</a>
+                </div>
+              </div>
+              <!--  modal-->
+    <div id="myModal{{$index+1}}" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">User {{user.name}} Statisctics</h4>
+        <button type="button"  class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+           <p>Test Attempted By User {{user.name}}</p>
+              <hr>
+              <p>{{NoUserTests}}</p>
+          	<ul class="text-left text-capitalize" style="color: black"
+             ng-repeat = "allUserTest in allUserTests track by $index ">
+            <li>Test No{{$index+1}}. {{allUserTest.testName}}
+              <button type="button" ng-click="getSingleTestResult(allUserTest._id); showResultX = true" class="btn btn-danger btn-large h5 pull-right">View Test Results</button>
+            <hr></li>
+            <ul ng-show="showResultX">
+              <div class="text-center">
+                <button type="button" class="btn btn-danger" ng-click="showResultX = false">Hide Result</button>
+              </div>
+              <li>Test Name:  {{allUserTest.testName}}</li>
+              <li>Test Category:  {{allUserTest.testCategory}}</li>
+              <li>Total Number of Questions:  {{allUserTest.totalQuestions}}</li>
+              <li>No. Of Correct Answer(s): {{totalCorrect}}</li>
+              <li>No. Of Wrong Answer(s):  {{totalWrong}}</li>
+              <li>Time taken:  {{timeTakenTotal}} Minutes</li>
+            </ul>
+         </ul>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  class="btn btn-danger btn-large h5" data-dismiss="modal">Close</button>
+        <!-- Trigger the modal with a button -->
+      </div>
+    </div>
+
+  </div>
+</div>
+            </div>
+          </div>
+          <!-- user analytics start -->
+            </div>
+          </div>
+          <!--  user analytics end-->
+        </div>
+      </div>
+             <!--all users section end  -->
+
+                   <h2 class="text-center h1">All Tests</h2>
+                   <div class="hr-title"><span>************</span></div>
+                 </div>
+               </div>
+             </div>
+             <!--all tests section start  -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6" ng-repeat="test in tests">
+            <h2 class="text-center h1" ng-if="!test">No Tests Listed By Admin</h2>
+            <div class="panel testsGrid" >
+              <div class="panel-body">
+                <b>Test Name: {{test.testName}}</b>
+                <hr>
+                <p class="h5">
+                  <ul>
+                    <li> Test Category: {{test.testCategory}}</li>
+                    <li>  Test Details: {{test.testDetails}}	</li>
+                    <li>  No. Of Questions: {{test.questions.length}}</li>
+                      </ul>
+                        <hr>
+                </p>
+                <div class="text-center" >
+                <a href="/viewtest/{{test._id}}" class="btn btn-info btn-large h5" >Manage Test</a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+                   <!--all tests section end  -->
+
+
+  <div class="col-sm-12">
+    <div class="panel">
+      <div class="panel-body">
+        <div class="hr-title"><span>************</span></div>
+      </div>
+    </div>
+  </div>
+</div>

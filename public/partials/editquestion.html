@@ -1,0 +1,64 @@
+<div class="container">
+<h1 class="text-center red" >Create An Test</h1><br>
+  <div class="hr-title"><span>************</span></div>
+  <div class="panel">
+    <div class="panel-body">
+      <div ng-if="messages.error" role="alert" class="alert alert-danger">
+        <div ng-repeat="error in messages.error">{{ error.msg}}</div>
+      </div>
+      <div ng-if="messages.success" role="alert" class="alert alert-success">
+        <div ng-repeat="success in messages.success">{{success.message}}</div>
+      </div>
+      <div class=" text-center">
+        <a  onclick="window.history.go(-1);"  class="btn btn-primary btn-large text-center h5">Go Back</a>
+        <a  ng-click="deleteSingleQuestion()" class="btn btn-danger btn-large text-center h5">Delete</a>
+
+      </div>
+
+<div class="col-md-3">  </div>
+    <form ng-submit="updateQuestion()" class="col-md-6">
+        <legend class="h2">Question Details</legend>
+        <div class="form-group">
+          <label for="question"> Question</label>
+          <input type="text" name="question" id="question" placeholder="Question " class="form-control" ng-model="question.question" required>
+        </div>
+        <div class="form-group">
+          <label for="optionA">Option A:</label>
+          <input type="text" name="optionA" id="optionA" placeholder="option A " required class="form-control" ng-model="question.optionA">
+        </div>
+        <div class="form-group">
+          <label for="optionC">Option B:</label>
+          <input type="text" name="optionB" id="optionC" placeholder=" option B " required class="form-control" ng-model="question.optionB">
+        </div>
+        <div class="form-group">
+          <label for="optionC">Option C:</label>
+          <input type="text" name="optionC" id="optionC" placeholder="option C"  required class="form-control" ng-model="question.optionC">
+        </div>
+        <div class="form-group">
+          <label for="optionD">Option D:</label>
+          <input type="text" name="optionD" id="optionD"  required placeholder="option D"  class="form-control" ng-model="question.optionD">
+        </div>
+        <div class="form-group">
+          <!-- <label for="text">Answer :</label> -->
+          <!-- <input type="text" name="answer" id="answer"  required placeholder="Answer"   class="form-control" ng-model="question.answer"> -->
+           <label for="answer"> Answer : (select correct one):</label>
+          <select id="answer" name="answer"  required   class="form-control" ng-model="question.answer">
+            <option>optionA</option>
+            <option>optionB</option>
+            <option>optionC</option>
+            <option>optionD</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success btn-block btn-large">Create an Question</button>
+      </form>
+
+  </div>
+  <div class=" text-center">
+    <a  onclick="window.history.go(-1);"  class="btn btn-primary btn-large text-center h5">Go Back</a>
+    <a  ng-click="deleteSingleQuestion()" class="btn btn-danger btn-large text-center h5">Delete</a>
+
+  </div>
+  <hr>
+</div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+http://localhost:3000/api/tests                                                                       ---post
+http://localhost:3000/api/tests                                                                       ---get
+http://localhost:3000/api/tests/:test_id                                                          ---get single
+http://localhost:3000/api/tests/:test_id                                                          ---put
+http://localhost:3000/api/tests/:test_id                                                          ---delete
+http://localhost:3000/api/tests/:test_id/questions                                          --get
+http://localhost:3000/api/tests/:test_id/questions                                          ---post
+http://localhost:3000/api/tests/:test_id/questions/:question_id                    ---put
+http://localhost:3000/api/tests/:test_id/questions/:question_id                    ---delete
+http://localhost:3000/api/tests/:test_id/questions/:question_id/answer        ---post
+http://localhost:3000/api/tests/:test_id/answers                                            ---get test specific
+http://localhost:3000/api/tests/:user_id/answers                                           ---get user specific
+http://localhost:3000/api/performance                                                           ---post
+http://localhost:3000/api/performance/:test_id                                              ---get test specific
+http://localhost:3000/api/performance/:user_id                                             ---get user specific

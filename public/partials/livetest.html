@@ -1,0 +1,78 @@
+<div class="container">
+  <h4 class="alert alert-success">Hello! {{profile.name}},
+             How are you doing today?,  Let's assume you're doing great :)</h4>
+  <div class="panel">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+
+      <div ng-if="messages.error" role="alert" class="alert alert-danger">
+        <div ng-repeat="error in messages.error">{{error.msg}}</div>
+      </div>
+      <div ng-if="messages.success" role="alert" class="alert alert-success">
+        <div ng-repeat="success in messages.success">{{success.msg}}</div>
+      </div>
+      <div class="container-fluid ">
+        <div  role="alert" class="alert alert-danger">
+          <p>To Submit Answer Click on Check box(if It's Already Checked then also, You need to click it), You have 10 Seconds to Answer each question, ALL THE BEST :) <b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class=" questions col m8 s12 offset-s2 ">
+
+          <div ng-hide="!questions[qIndex]">
+            <div class="section">
+              <p class="left-align">Time: <span id='seconds' style="color: red"><b>{{qTime}}</b></span></p>
+              <p class="left-align"> Q {{qIndex+1}}: {{questions[qIndex].question}}
+              </p>
+              <p>
+                <input name="group1"  type="radio" id="test1"
+                ng-click=" storeSolution('optionA', questions[qIndex]._id, profile._id, testid, questions[qIndex].answer); stop(); incIndex(); " />
+                <label for="test1">{{questions[qIndex].optionA}} </label>
+              </p>
+              <p>
+                <input name="group1"  type="radio" id="test2"
+                 ng-click=" storeSolution('optionB', questions[qIndex]._id, profile._id, testid, questions[qIndex].answer); stop(); incIndex(); " />
+                <label for="test2">{{questions[qIndex].optionB}}</label>
+              </p>
+              <p>
+                <input name="group1" type="radio"
+                 ng-click="storeSolution('optionC', questions[qIndex]._id, profile._id, testid, questions[qIndex].answer); stop(); incIndex(); " />
+                <label for="test3">{{questions[qIndex].optionC}}</label>
+              </p>
+              <p>
+                <input name="group1" type="radio"
+                 ng-click=" storeSolution('optionD', questions[qIndex]._id, profile._id, testid, questions[qIndex].answer); stop(); incIndex(); " />
+                <label for="test4">{{questions[qIndex].optionD}}</label>
+              </p>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div ng-show="!questions[qIndex]" ng-hide="questions.length" role="alert" class="alert alert-success">
+              <p>"Thanks" <b> {{profile.name}} </b>", Let's see How You Peroformed!!!!"<br>
+              <b>Please Wait for 10 Seconds(<span id='seconds' style="color: red"><b>{{qTime}}</b></span>), In The Mean Time We Will Generate Your Test Performance Results :)</b></p>
+            </div>
+            <div ng-show="!questions.length" role="alert" class="alert alert-success">
+              <p>"No questions added in the test by admin" <b></p>
+            </div>
+        </div>
+
+        <!-- Pagination div  -->
+
+        <!-- <div class="pagination-div" ng-show="questions.length">
+        <a  href="" ng-click="curPage = curPage+1" class="btn hidden" id="magicBtn">NEXT Question</a>
+        <button type="button" ng-disabled="curPage == 0"
+         ng-click="curPage=curPage-1" class="btn btn-primary h5">PREV</button>
+         <span>Page {{curPage + 1}} of {{ numberOfPages() }}</span>
+         <button type="button"
+         ng-disabled="curPage >= questions.length/pageSize - 1"
+         ng-click="curPage = curPage+1" class="btn btn-primary h5 btn-block" >NEXT </button>
+
+        </div> -->
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</div>
