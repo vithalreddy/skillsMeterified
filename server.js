@@ -31,7 +31,7 @@ var app = express();
 mongoose.Promise = global.Promise;
 
 //db connection
-var dbPath = "mongodb://vmrskills:vmrskills@ds155192.mlab.com:55192/skillsmeterified";
+var dbPath = "mongodb://vmrskills:vmrskills123@ds155192.mlab.com:55192/skillsmeterified";
 mongoose.connect(dbPath || process.env.MONGODB_URI );
 mongoose.connection.once('open',function(){
   console.log("Database Connection Established Successfully.");
