@@ -6,7 +6,7 @@ const User = require('../models/User');
 const Test = require('../models/test');
 const Question = require('../models/question');
 const Answer = require('../models/answer');
-const totalPerformance = require('../models/Performance');
+const totalPerformance = require('../models/performance');
 
 
 //response generating utility
