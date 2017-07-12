@@ -31,14 +31,14 @@ var app = express();
 mongoose.Promise = global.Promise;
 
 //db connection
-var dbPath = "mongodb://localhost:27017/skillsMeterifiedDB";
-mongoose.connect(process.env.MONGODB_URI || dbPath);
+var dbPath = "mongodb://vmrskills:vmrskills@ds155192.mlab.com:55192/skillsmeterified";
+mongoose.connect(dbPath || process.env.MONGODB_URI );
 mongoose.connection.once('open',function(){
   console.log("Database Connection Established Successfully.");
 });
 mongoose.connection.on('error', function() {
   console.log('MongoDB Connection Error. Please make sure that MongoDB is running.');
-  process.exit(1);
+  //process.exit(1);
 });
 
 //app settings

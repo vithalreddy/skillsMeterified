@@ -79,7 +79,7 @@ angular.module('MyApp', ['ngRoute', 'satellizer'])
     $authProvider.facebook({
       url: '/auth/facebook',
       clientId: '226076567890861',
-      redirectUri: 'https://skillsmeterified-by-vmr.herokuapp.com/auth/facebook/callback'
+      redirectUri: 'http://skillsmeterified.tk/auth/facebook/callback'
     });
     $authProvider.google({
       url: '/auth/google',
