@@ -15,7 +15,7 @@ function generateToken(user) {
     iat: moment().unix(),
     exp: moment().add(7, 'days').unix()
   };
-  return jwt.sign(payload, process.env.TOKEN_SECRET);
+  return jwt.sign(payload, "875916b9aa8591781khiladi287df573c07ed56ecc697ebb88b744329af117468be5953");
 }
 
 /**
@@ -209,8 +209,8 @@ exports.forgotPost = function(req, res, next) {
       var transporter = nodemailer.createTransport({
         service: 'Mailgun',
         auth: {
-          user: process.env.MAILGUN_USERNAME,
-          pass: process.env.MAILGUN_PASSWORD
+          user: "postmaster@sandbox67c118365e564798a8864434e4b2a3cb.mailgun.org",
+          pass: "ed49d942fd9e6c11208ee3aacb29df9d"
         }
       });
       var mailOptions = {
@@ -263,8 +263,8 @@ exports.resetPost = function(req, res, next) {
       var transporter = nodemailer.createTransport({
         service: 'Mailgun',
         auth: {
-          user: process.env.MAILGUN_USERNAME,
-          pass: process.env.MAILGUN_PASSWORD
+          user: "postmaster@sandbox67c118365e564798a8864434e4b2a3cb.mailgun.org",
+          pass: "ed49d942fd9e6c11208ee3aacb29df9d"
         }
       });
       var mailOptions = {
@@ -293,7 +293,7 @@ exports.authFacebook = function(req, res) {
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
-    client_secret: process.env.FACEBOOK_SECRET,
+    client_secret: "fb9416c436edd2690c6f6adbd94374d1",
     redirect_uri: req.body.redirectUri
   };
 
@@ -366,7 +366,7 @@ exports.authGoogle = function(req, res) {
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
-    client_secret: process.env.GOOGLE_SECRET,
+    client_secret: "SyXmZcdT6vPFeqcs0jaPhdVP",
     redirect_uri: req.body.redirectUri,
     grant_type: 'authorization_code'
   };

@@ -30,8 +30,8 @@ var app = express();
 mongoose.Promise = global.Promise;
 
 //db connection
-var dbPath = "mongodb://<vmrskills>:<vmrskills123>@ds155192.mlab.com:55192/skillsmeterified";
-mongoose.connect(dbPath  || process.env.MONGODB);
+var dbPath = "mongodb://localhost:27017/skillsMeterifiedDB";
+mongoose.connect(process.env.MONGOLAB_URI || dbPath);
 mongoose.connection.once('open',function(){
   console.log("Database Connection Established Successfully.");
 });
@@ -54,7 +54,7 @@ app.use(function(req, res, next) {
   req.isAuthenticated = function() {
     var token = (req.headers.authorization && req.headers.authorization.split(' ')[1]) || req.cookies.token;
     try {
-      return jwt.verify(token, process.env.TOKEN_SECRET);
+      return jwt.verify(token, "875916b9aa8591781khiladi287df573c07ed56ecc697ebb88b744329af117468be5953");
     } catch (err) {
       return false;
     }

@@ -2,8 +2,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
   service: 'Mailgun',
   auth: {
-    user: process.env.MAILGUN_USERNAME,
-    pass: process.env.MAILGUN_PASSWORD
+    user: "postmaster@sandbox67c118365e564798a8864434e4b2a3cb.mailgun.org",
+    pass: "ed49d942fd9e6c11208ee3aacb29df9d"
   }
 });
 
