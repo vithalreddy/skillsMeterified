@@ -31,7 +31,7 @@ mongoose.Promise = global.Promise;
 
 //db connection
 var dbPath = "mongodb://localhost:27017/skillsMeterifiedDB";
-mongoose.connect(process.env.MONGOLAB_URI || dbPath);
+mongoose.connect(process.env.MONGODB_URI || dbPath);
 mongoose.connection.once('open',function(){
   console.log("Database Connection Established Successfully.");
 });
