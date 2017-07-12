@@ -4,7 +4,7 @@
   "description": "Test Your Skills",
   "scripts": {
     "deploy": "npm test && git push heroku master",
-    "start": "node server.js"
+    "start": "server.js"
   },
   "dependencies": {
     "async": "^2.5.0",
