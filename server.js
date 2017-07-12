@@ -5,7 +5,7 @@ const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
-const dotenv = require('dotenv');
+//const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const moment = require('moment');
@@ -15,7 +15,8 @@ const methodOverride = require('method-override');
 
 
 // Load environment variables from .env file
-dotenv.load();
+
+//dotenv.load();
 // Models
 var User = require('./models/User');
 
