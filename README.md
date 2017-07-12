@@ -1,6 +1,6 @@
 # SkillsMeterified ~ Test Your Skills In RealTime
 
-  Live at  http://skillsmeterified-by-vmr.herokuapp.com
+  Live at  https://skillsmeterified-by-vmr.herokuapp.com
 
 ## Description
 A Multiple choice test taking system in which tests are tracked live and analytics are generated based on That.
