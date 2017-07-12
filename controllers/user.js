@@ -366,7 +366,7 @@ exports.authGoogle = function(req, res) {
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
-    client_secret: "SyXmZcdT6vPFeqcs0jaPhdVP",
+    client_secret: "WebcjZnXZDcjqu-CZxWORUWZ",
     redirect_uri: req.body.redirectUri,
     grant_type: 'authorization_code'
   };
