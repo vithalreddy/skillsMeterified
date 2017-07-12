@@ -293,7 +293,7 @@ exports.authFacebook = function(req, res) {
   var params = {
     code: req.body.code,
     client_id: req.body.clientId,
-    client_secret: "fb9416c436edd2690c6f6adbd94374d1",
+    client_secret: "79be066f46a83c27e54491a67478ec85",
     redirect_uri: req.body.redirectUri
   };
 
