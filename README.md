@@ -1,6 +1,6 @@
 # SkillsMeterified ~ Test Your Skills In RealTime
 
-  Live at  http://13.59.30.132
+  Live at  http://ec2-13-59-30-132.us-east-2.compute.amazonaws.com/dashboard
 
 ## Description
 A Multiple choice test taking system in which tests are tracked live and analytics are generated based on That.
